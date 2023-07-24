@@ -10,3 +10,6 @@ API
 
 .. automodule:: filter_use
     :members:
+
+.. automodule:: defaultdict_use
+    :members:

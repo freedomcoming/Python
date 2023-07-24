@@ -11,7 +11,7 @@ import sys
 
 sys.path.insert(0, os.path.abspath('src'))
 
-project = 'test'
+project = 'Python'
 copyright = '2023, karl'
 author = 'karl'
 

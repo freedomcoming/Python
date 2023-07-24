@@ -3,14 +3,15 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to test's documentation!
-================================
+Welcome to Python's documentation!
+==================================
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :glob:
 
-   install
+   aboutme
+   source/*
    api
 Indices and tables
 ==================
@@ -20,7 +21,4 @@ Indices and tables
 * :ref:`search`
 
 
-Appendix
-=========
 
-:doc:`api_reference`

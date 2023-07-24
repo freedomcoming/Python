@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>API &mdash; test  documentation</title>
+  <title>API &mdash; Python  documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="_static/jquery.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="install" href="install.html" /> 
+    <link rel="prev" title="&lt;no title&gt;" href="source/p16_appendix.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -31,7 +30,7 @@
           
           
           <a href="index.html" class="icon icon-home">
-            test
+            Python
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -41,23 +40,24 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="install.html">install</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">API</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#main.BasicClass"><code class="docutils literal notranslate"><span class="pre">BasicClass</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#main.InvalidKindError"><code class="docutils literal notranslate"><span class="pre">InvalidKindError</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#main.get_random_ingredients"><code class="docutils literal notranslate"><span class="pre">get_random_ingredients()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#map_use.MapUse"><code class="docutils literal notranslate"><span class="pre">MapUse</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#map_use.MapUse.map_use"><code class="docutils literal notranslate"><span class="pre">MapUse.map_use()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#filter_use.FilterUse"><code class="docutils literal notranslate"><span class="pre">FilterUse</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#filter_use.FilterUse.filter_use"><code class="docutils literal notranslate"><span class="pre">FilterUse.filter_use()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="aboutme.html">关于作者</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source/p01_data_structures_algorithms.html">第一章：数据结构和算法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source/p02_strings_and_text.html">第二章：字符串和文本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source/p03_numbers_dates_times.html">第三章：数字日期和时间</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source/p04_iterators_and_generators.html">第四章：迭代器与生成器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source/p05_files_and_io.html">第五章：文件与IO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source/p06_data_encoding_and_process.html">第六章：数据编码和处理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source/p07_functions.html">第七章：函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source/p08_classes_and_objects.html">第八章：类与对象</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source/p09_meta_programming.html">第九章：元编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source/p10_modules_and_packages.html">第十章：模块与包</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source/p11_network_and_web_program.html">第十一章：网络与Web编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source/p12_concurrency.html">第十二章：并发编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source/p13_utility_script_and_system_manage.html">第十三章：脚本编程与系统管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source/p14_test_debug_and_exceptions.html">第十四章：测试、调试和异常</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source/p15_c_extensions.html">第十五章：C语言扩展</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API</a></li>
 </ul>
 
         </div>
@@ -66,7 +66,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">test</a>
+          <a href="index.html">Python</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -85,17 +85,17 @@
            <div itemprop="articleBody">
              
   <section id="module-main">
-<span id="api"></span><h1>API<a class="headerlink" href="#module-main" title="Permalink to this heading"></a></h1>
+<span id="api"></span><h1>API<a class="headerlink" href="#module-main" title="Permalink to this headline"></a></h1>
 <p>test function</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="main.BasicClass">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">main.</span></span><span class="sig-name descname"><span class="pre">BasicClass</span></span><a class="reference internal" href="_modules/main.html#BasicClass"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#main.BasicClass" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">main.</span></span><span class="sig-name descname"><span class="pre">BasicClass</span></span><a class="reference internal" href="_modules/main.html#BasicClass"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#main.BasicClass" title="Permalink to this definition"></a></dt>
 <dd><p>basic class</p>
 </dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="main.InvalidKindError">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">main.</span></span><span class="sig-name descname"><span class="pre">InvalidKindError</span></span><a class="reference internal" href="_modules/main.html#InvalidKindError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#main.InvalidKindError" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">main.</span></span><span class="sig-name descname"><span class="pre">InvalidKindError</span></span><a class="reference internal" href="_modules/main.html#InvalidKindError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#main.InvalidKindError" title="Permalink to this definition"></a></dt>
 <dd><p>Raised if the kind is invalid.</p>
 </dd></dl>
 
@@ -104,16 +104,16 @@
 <span class="sig-prename descclassname"><span class="pre">main.</span></span><span class="sig-name descname"><span class="pre">get_random_ingredients</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kind</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main.html#get_random_ingredients"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#main.get_random_ingredients" title="Permalink to this definition"></a></dt>
 <dd><p>Return a list of random ingredients as strings.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>kind</strong> (<em>list</em><em>[</em><em>str</em><em>] or </em><em>None</em>) – Optional “kind” of ingredients.</p>
 </dd>
-<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dt class="field-even">Raises</dt>
 <dd class="field-even"><p><strong>lumache.InvalidKindError</strong> – If the kind is invalid.</p>
 </dd>
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>The ingredients list.</p>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dt class="field-even">Return type</dt>
 <dd class="field-even"><p>list[str]</p>
 </dd>
 </dl>
@@ -122,7 +122,7 @@
 
 <span class="target" id="module-map_use"></span><dl class="py class">
 <dt class="sig sig-object py" id="map_use.MapUse">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">map_use.</span></span><span class="sig-name descname"><span class="pre">MapUse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/map_use.html#MapUse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#map_use.MapUse" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">map_use.</span></span><span class="sig-name descname"><span class="pre">MapUse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/map_use.html#MapUse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#map_use.MapUse" title="Permalink to this definition"></a></dt>
 <dd><p>map 使用</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="map_use.MapUse.map_use">
@@ -140,7 +140,7 @@
 
 <span class="target" id="module-filter_use"></span><dl class="py class">
 <dt class="sig sig-object py" id="filter_use.FilterUse">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">filter_use.</span></span><span class="sig-name descname"><span class="pre">FilterUse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/filter_use.html#FilterUse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#filter_use.FilterUse" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">filter_use.</span></span><span class="sig-name descname"><span class="pre">FilterUse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/filter_use.html#FilterUse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#filter_use.FilterUse" title="Permalink to this definition"></a></dt>
 <dd><p>filter 使用</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="filter_use.FilterUse.filter_use">
@@ -156,13 +156,19 @@
 
 </dd></dl>
 
+<span class="target" id="module-defaultdict_use"></span><dl class="py function">
+<dt class="sig sig-object py" id="defaultdict_use.defaultDICT">
+<span class="sig-prename descclassname"><span class="pre">defaultdict_use.</span></span><span class="sig-name descname"><span class="pre">defaultDICT</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/defaultdict_use.html#defaultDICT"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#defaultdict_use.defaultDICT" title="Permalink to this definition"></a></dt>
+<dd><p>默认字典的用法</p>
+</dd></dl>
+
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="install.html" class="btn btn-neutral float-left" title="install" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="source/p16_appendix.html" class="btn btn-neutral float-left" title="&lt;no title&gt;" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
