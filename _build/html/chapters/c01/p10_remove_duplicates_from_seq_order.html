@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>1.10 删除序列相同元素并保持顺序 &mdash; Python  documentation</title>
@@ -11,10 +11,11 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -114,13 +115,13 @@
            <div itemprop="articleBody">
              
   <section id="id1">
-<h1>1.10 删除序列相同元素并保持顺序<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h1>
+<h1>1.10 删除序列相同元素并保持顺序<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h1>
 <section id="id2">
-<h2>问题<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<h2>问题<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
 <p>怎样在一个序列上面保持元素顺序的同时消除重复的值？</p>
 </section>
 <section id="id3">
-<h2>解决方案<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<h2>解决方案<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
 <p>如果序列上的值都是 <code class="docutils literal notranslate"><span class="pre">hashable</span></code> 类型，那么可以很简单的利用集合或者生成器来解决这个问题。比如：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dedupe</span><span class="p">(</span><span class="n">items</span><span class="p">):</span>
     <span class="n">seen</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
@@ -160,7 +161,7 @@
 <p>如果你想基于单个字段、属性或者某个更大的数据结构来消除重复元素，第二种方案同样可以胜任。</p>
 </section>
 <section id="id4">
-<h2>讨论<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h2>
+<h2>讨论<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
 <p>如果你仅仅就是想消除重复元素，通常可以简单的构造一个集合。比如：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>
 <span class="go">[1, 5, 2, 1, 9, 1, 5, 10]</span>

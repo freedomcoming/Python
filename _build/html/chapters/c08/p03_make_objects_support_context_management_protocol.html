@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>8.3 让对象支持上下文管理协议 &mdash; Python  documentation</title>
@@ -11,10 +11,11 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -119,13 +120,13 @@
            <div itemprop="articleBody">
              
   <section id="id1">
-<h1>8.3 让对象支持上下文管理协议<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h1>
+<h1>8.3 让对象支持上下文管理协议<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h1>
 <section id="id2">
-<h2>问题<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<h2>问题<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
 <p>你想让你的对象支持上下文管理协议(with语句)。</p>
 </section>
 <section id="id3">
-<h2>解决方案<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<h2>解决方案<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
 <p>为了让一个对象兼容 <code class="docutils literal notranslate"><span class="pre">with</span></code> 语句，你需要实现 <code class="docutils literal notranslate"><span class="pre">__enter__()</span></code> 和 <code class="docutils literal notranslate"><span class="pre">__exit__()</span></code> 方法。
 例如，考虑如下的一个类，它能为我们创建一个网络连接：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">socket</span> <span class="kn">import</span> <span class="n">socket</span><span class="p">,</span> <span class="n">AF_INET</span><span class="p">,</span> <span class="n">SOCK_STREAM</span>
@@ -166,7 +167,7 @@
 </div>
 </section>
 <section id="id4">
-<h2>讨论<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h2>
+<h2>讨论<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
 <p>编写上下文管理器的主要原理是你的代码会放到 <code class="docutils literal notranslate"><span class="pre">with</span></code> 语句块中执行。
 当出现 <code class="docutils literal notranslate"><span class="pre">with</span></code> 语句的时候，对象的 <code class="docutils literal notranslate"><span class="pre">__enter__()</span></code> 方法被触发，
 它返回的值(如果有的话)会被赋值给 <code class="docutils literal notranslate"><span class="pre">as</span></code> 声明的变量。然后，<code class="docutils literal notranslate"><span class="pre">with</span></code> 语句块里面的代码开始执行。

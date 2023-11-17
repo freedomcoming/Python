@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>9.12 使用装饰器扩充类的功能 &mdash; Python  documentation</title>
@@ -11,10 +11,11 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -119,13 +120,13 @@
            <div itemprop="articleBody">
              
   <section id="id1">
-<h1>9.12 使用装饰器扩充类的功能<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h1>
+<h1>9.12 使用装饰器扩充类的功能<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h1>
 <section id="id2">
-<h2>问题<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<h2>问题<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
 <p>你想通过反省或者重写类定义的某部分来修改它的行为，但是你又不希望使用继承或元类的方式。</p>
 </section>
 <section id="id3">
-<h2>解决方案<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<h2>解决方案<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
 <p>这种情况可能是类装饰器最好的使用场景了。例如，下面是一个重写了特殊方法 <code class="docutils literal notranslate"><span class="pre">__getattribute__</span></code> 的类装饰器，
 可以打印日志：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">log_getattribute</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
@@ -162,7 +163,7 @@
 </div>
 </section>
 <section id="id4">
-<h2>讨论<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h2>
+<h2>讨论<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
 <p>类装饰器通常可以作为其他高级技术比如混入或元类的一种非常简洁的替代方案。
 比如，上面示例中的另外一种实现使用到继承：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">LoggedGetattribute</span><span class="p">:</span>

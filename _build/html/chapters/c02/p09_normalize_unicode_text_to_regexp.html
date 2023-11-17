@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>2.9 将Unicode文本标准化 &mdash; Python  documentation</title>
@@ -11,10 +11,11 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -114,13 +115,13 @@
            <div itemprop="articleBody">
              
   <section id="unicode">
-<h1>2.9 将Unicode文本标准化<a class="headerlink" href="#unicode" title="Permalink to this headline"></a></h1>
+<h1>2.9 将Unicode文本标准化<a class="headerlink" href="#unicode" title="Permalink to this heading"></a></h1>
 <section id="id1">
-<h2>问题<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h2>
+<h2>问题<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
 <p>你正在处理Unicode字符串，需要确保所有字符串在底层有相同的表示。</p>
 </section>
 <section id="id2">
-<h2>解决方案<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<h2>解决方案<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
 <p>在Unicode中，某些字符能够用多个合法的编码表示。为了说明，考虑下面的这个例子：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s1</span> <span class="o">=</span> <span class="s1">&#39;Spicy Jalape</span><span class="se">\u00f1</span><span class="s1">o&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s2</span> <span class="o">=</span> <span class="s1">&#39;Spicy Jalapen</span><span class="se">\u0303</span><span class="s1">o&#39;</span>
@@ -175,7 +176,7 @@ NFC表示字符应该是整体组成(比如可能的话就使用单一编码)，
 </div>
 </section>
 <section id="id3">
-<h2>讨论<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<h2>讨论<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
 <p>标准化对于任何需要以一致的方式处理Unicode文本的程序都是非常重要的。
 当处理来自用户输入的字符串而你很难去控制编码的时候尤其如此。</p>
 <p>在清理和过滤文本的时候字符的标准化也是很重要的。

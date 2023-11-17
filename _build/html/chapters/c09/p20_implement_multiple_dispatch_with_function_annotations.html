@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>9.20 利用函数注解实现方法重载 &mdash; Python  documentation</title>
@@ -11,10 +11,11 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -119,14 +120,14 @@
            <div itemprop="articleBody">
              
   <section id="id1">
-<h1>9.20 利用函数注解实现方法重载<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h1>
+<h1>9.20 利用函数注解实现方法重载<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h1>
 <section id="id2">
-<h2>问题<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<h2>问题<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
 <p>你已经学过怎样使用函数参数注解，那么你可能会想利用它来实现基于类型的方法重载。
 但是你不确定应该怎样去实现（或者到底行得通不）。</p>
 </section>
 <section id="id3">
-<h2>解决方案<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<h2>解决方案<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
 <p>本小节的技术是基于一个简单的技术，那就是Python允许参数注解，代码可以像下面这样写：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Spam</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">bar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span><span class="nb">int</span><span class="p">):</span>
@@ -279,7 +280,7 @@
 </div>
 </section>
 <section id="id4">
-<h2>讨论<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h2>
+<h2>讨论<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
 <p>坦白来讲，相对于通常的代码而已本节使用到了很多的魔法代码。
 但是，它却能让我们深入理解元类和描述器的底层工作原理，
 并能加深对这些概念的印象。因此，就算你并不会立即去应用本节的技术，

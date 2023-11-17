@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>9.17 在类上强制使用编程规约 &mdash; Python  documentation</title>
@@ -11,10 +11,11 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -119,13 +120,13 @@
            <div itemprop="articleBody">
              
   <section id="id1">
-<h1>9.17 在类上强制使用编程规约<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h1>
+<h1>9.17 在类上强制使用编程规约<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h1>
 <section id="id2">
-<h2>问题<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<h2>问题<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
 <p>你的程序包含一个很大的类继承体系，你希望强制执行某些编程规约（或者代码诊断）来帮助程序员保持清醒。</p>
 </section>
 <section id="id3">
-<h2>解决方案<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<h2>解决方案<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
 <p>如果你想监控类的定义，通常可以通过定义一个元类。一个基本元类通常是继承自 <code class="docutils literal notranslate"><span class="pre">type</span></code> 并重定义它的 <code class="docutils literal notranslate"><span class="pre">__new__()</span></code> 方法
 或者是 <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> 方法。比如：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyMeta</span><span class="p">(</span><span class="nb">type</span><span class="p">):</span>
@@ -229,7 +230,7 @@
 那么当子类改变参数名字的时候就会调用出错。</p>
 </section>
 <section id="id4">
-<h2>讨论<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h2>
+<h2>讨论<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
 <p>在大型面向对象的程序中，通常将类的定义放在元类中控制是很有用的。
 元类可以监控类的定义，警告编程人员某些没有注意到的可能出现的问题。</p>
 <p>有人可能会说，像这样的错误可以通过程序分析工具或IDE去做会更好些。诚然，这些工具是很有用。

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>15.1 使用ctypes访问C代码 &mdash; Python  documentation</title>
@@ -11,10 +11,11 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -115,14 +116,14 @@
            <div itemprop="articleBody">
              
   <section id="ctypesc">
-<h1>15.1 使用ctypes访问C代码<a class="headerlink" href="#ctypesc" title="Permalink to this headline"></a></h1>
+<h1>15.1 使用ctypes访问C代码<a class="headerlink" href="#ctypesc" title="Permalink to this heading"></a></h1>
 <section id="id1">
-<h2>问题<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h2>
+<h2>问题<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
 <p>你有一些C函数已经被编译到共享库或DLL中。你希望可以使用纯Python代码调用这些函数，
 而不用编写额外的C代码或使用第三方扩展工具。</p>
 </section>
 <section id="id2">
-<h2>解决方案<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<h2>解决方案<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
 <p>对于需要调用C代码的一些小的问题，通常使用Python标准库中的 <code class="docutils literal notranslate"><span class="pre">ctypes</span></code> 模块就足够了。
 要使用 <code class="docutils literal notranslate"><span class="pre">ctypes</span></code> ，你首先要确保你要访问的C代码已经被编译到和Python解释器兼容
 （同样的架构、字大小、编译器等）的某个共享库中了。
@@ -229,7 +230,7 @@
 </div>
 </section>
 <section id="id3">
-<h2>讨论<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<h2>讨论<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
 <p>本小节有很多值得我们详细讨论的地方。
 首先是对于C和Python代码一起打包的问题，如果你在使用 <code class="docutils literal notranslate"><span class="pre">ctypes</span></code> 来访问编译后的C代码，
 那么需要确保这个共享库放在 <code class="docutils literal notranslate"><span class="pre">sample.py</span></code> 模块同一个地方。

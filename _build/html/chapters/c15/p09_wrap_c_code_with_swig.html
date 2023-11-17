@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>15.9 用SWIG包装C代码 &mdash; Python  documentation</title>
@@ -11,10 +11,11 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -115,13 +116,13 @@
            <div itemprop="articleBody">
              
   <section id="swigc">
-<h1>15.9 用SWIG包装C代码<a class="headerlink" href="#swigc" title="Permalink to this headline"></a></h1>
+<h1>15.9 用SWIG包装C代码<a class="headerlink" href="#swigc" title="Permalink to this heading"></a></h1>
 <section id="id1">
-<h2>问题<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h2>
+<h2>问题<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
 <p>你想让你写的C代码作为一个C扩展模块来访问，想通过使用 <a class="reference external" href="http://www.swig.org/">Swig包装生成器</a> 来完成。</p>
 </section>
 <section id="id2">
-<h2>解决方案<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<h2>解决方案<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
 <p>Swig通过解析C头文件并自动创建扩展代码来操作。
 要使用它，你先要有一个C头文件。例如，我们示例的头文件如下：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/*</span> <span class="n">sample</span><span class="o">.</span><span class="n">h</span> <span class="o">*/</span>
@@ -262,7 +263,7 @@ bash %
 </div>
 </section>
 <section id="id3">
-<h2>讨论<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<h2>讨论<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
 <p>Swig是Python历史中构建扩展模块的最古老的工具之一。
 Swig能自动化很多包装生成器的处理。</p>
 <p>所有Swig接口都以类似下面这样的为开头：</p>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>15.5 从扩展模块中定义和导出C的API &mdash; Python  documentation</title>
@@ -11,10 +11,11 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -115,15 +116,15 @@
            <div itemprop="articleBody">
              
   <section id="capi">
-<h1>15.5 从扩展模块中定义和导出C的API<a class="headerlink" href="#capi" title="Permalink to this headline"></a></h1>
+<h1>15.5 从扩展模块中定义和导出C的API<a class="headerlink" href="#capi" title="Permalink to this heading"></a></h1>
 <section id="id1">
-<h2>问题<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h2>
+<h2>问题<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
 <p>你有一个C扩展模块，在内部定义了很多有用的函数，你想将它们导出为一个公共的C API供其他地方使用。
 你想在其他扩展模块中使用这些函数，但是不知道怎样将它们链接起来，
 并且通过C编译器/链接器来做看上去特别复杂（或者不可能做到）。</p>
 </section>
 <section id="id2">
-<h2>解决方案<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<h2>解决方案<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
 <p>本节主要问题是如何处理15.4小节中提到的Point对象。仔细回一下，在C代码中包含了如下这些工具函数：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>/* Destructor function for points */
 static void del_Point(PyObject *obj) {
@@ -309,7 +310,7 @@ PyInit_ptexample(void) {
 </div>
 </section>
 <section id="id3">
-<h2>讨论<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<h2>讨论<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
 <p>本节基于一个前提就是，胶囊对象能获取任何你想要的对象的指针。
 这样的话，定义模块会填充一个函数指针的结构体，创建一个指向它的胶囊，并在一个模块级属性中保存这个胶囊，
 例如 <code class="docutils literal notranslate"><span class="pre">sample._point_api</span></code> .</p>

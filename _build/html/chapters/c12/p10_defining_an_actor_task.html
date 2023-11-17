@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>12.10 定义一个Actor任务 &mdash; Python  documentation</title>
@@ -11,10 +11,11 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -108,13 +109,13 @@
            <div itemprop="articleBody">
              
   <section id="actor">
-<h1>12.10 定义一个Actor任务<a class="headerlink" href="#actor" title="Permalink to this headline"></a></h1>
+<h1>12.10 定义一个Actor任务<a class="headerlink" href="#actor" title="Permalink to this heading"></a></h1>
 <section id="id1">
-<h2>问题<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h2>
+<h2>问题<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
 <p>你想定义跟actor模式中类似“actors”角色的任务</p>
 </section>
 <section id="id2">
-<h2>解决方案<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<h2>解决方案<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
 <p>actor模式是一种最古老的也是最简单的并行和分布式计算解决方案。
 事实上，它天生的简单性是它如此受欢迎的重要原因之一。
 简单来讲，一个actor就是一个并发执行的任务，只是简单的执行发送给它的消息任务。
@@ -226,7 +227,7 @@ actor之间的通信是单向和异步的。因此，消息发送者不知道消
 </div>
 </section>
 <section id="id3">
-<h2>讨论<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<h2>讨论<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
 <p>actor模式的魅力就在于它的简单性。
 实际上，这里仅仅只有一个核心操作 <code class="docutils literal notranslate"><span class="pre">send()</span></code> .
 甚至，对于在基于actor系统中的“消息”的泛化概念可以已多种方式被扩展。

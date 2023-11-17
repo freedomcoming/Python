@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>5.20 与串行端口的数据通信 &mdash; Python  documentation</title>
@@ -11,10 +11,11 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -115,13 +116,13 @@
            <div itemprop="articleBody">
              
   <section id="id1">
-<h1>5.20 与串行端口的数据通信<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h1>
+<h1>5.20 与串行端口的数据通信<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h1>
 <section id="id2">
-<h2>问题<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<h2>问题<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
 <p>你想通过串行端口读写数据，典型场景就是和一些硬件设备打交道(比如一个机器人或传感器)。</p>
 </section>
 <section id="id3">
-<h2>解决方案<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<h2>解决方案<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
 <p>尽管你可以通过使用Python内置的I/O模块来完成这个任务，但对于串行通信最好的选择是使用
 <a class="reference external" href="http://pyserial.sourceforge.net/">pySerial包</a> 。
 这个包的使用非常简单，先安装pySerial，使用类似下面这样的代码就能很容易的打开一个串行端口：</p>
@@ -143,7 +144,7 @@
 <p>大多数情况下，简单的串口通信从此变得十分简单。</p>
 </section>
 <section id="id4">
-<h2>讨论<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h2>
+<h2>讨论<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
 <p>尽管表面上看起来很简单，其实串口通信有时候也是挺麻烦的。
 推荐你使用第三方包如 <code class="docutils literal notranslate"><span class="pre">pySerial</span></code> 的一个原因是它提供了对高级特性的支持
 (比如超时，控制流，缓冲区刷新，握手协议等等)。举个例子，如果你想启用 <code class="docutils literal notranslate"><span class="pre">RTS-CTS</span></code> 握手协议，

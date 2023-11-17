@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>2.12 审查清理文本字符串 &mdash; Python  documentation</title>
@@ -11,10 +11,11 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -114,13 +115,13 @@
            <div itemprop="articleBody">
              
   <section id="id1">
-<h1>2.12 审查清理文本字符串<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h1>
+<h1>2.12 审查清理文本字符串<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h1>
 <section id="id2">
-<h2>问题<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<h2>问题<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
 <p>一些无聊的幼稚黑客在你的网站页面表单中输入文本”pýtĥöñ”，然后你想将这些字符清理掉。</p>
 </section>
 <section id="id3">
-<h2>解决方案<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<h2>解决方案<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
 <p>文本清理问题会涉及到包括文本解析与数据处理等一系列问题。
 在非常简单的情形下，你可能会选择使用字符串函数(比如 <code class="docutils literal notranslate"><span class="pre">str.upper()</span></code> 和 <code class="docutils literal notranslate"><span class="pre">str.lower()</span></code> )将文本转为标准格式。
 使用 <code class="docutils literal notranslate"><span class="pre">str.replace()</span></code> 或者 <code class="docutils literal notranslate"><span class="pre">re.sub()</span></code> 的简单替换操作能删除或者改变指定的字符序列。
@@ -193,7 +194,7 @@
 当然，这种方法仅仅只在最后的目标就是获取到文本对应ACSII表示的时候生效。</p>
 </section>
 <section id="id4">
-<h2>讨论<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h2>
+<h2>讨论<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
 <p>文本字符清理一个最主要的问题应该是运行的性能。一般来讲，代码越简单运行越快。
 对于简单的替换操作， <code class="docutils literal notranslate"><span class="pre">str.replace()</span></code> 方法通常是最快的，甚至在你需要多次调用的时候。
 比如，为了清理空白字符，你可以这样做：</p>

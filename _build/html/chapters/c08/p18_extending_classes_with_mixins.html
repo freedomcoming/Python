@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>8.18 利用Mixins扩展类功能 &mdash; Python  documentation</title>
@@ -11,10 +11,11 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -119,14 +120,14 @@
            <div itemprop="articleBody">
              
   <section id="mixins">
-<h1>8.18 利用Mixins扩展类功能<a class="headerlink" href="#mixins" title="Permalink to this headline"></a></h1>
+<h1>8.18 利用Mixins扩展类功能<a class="headerlink" href="#mixins" title="Permalink to this heading"></a></h1>
 <section id="id1">
-<h2>问题<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h2>
+<h2>问题<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
 <p>你有很多有用的方法，想使用它们来扩展其他类的功能。但是这些类并没有任何继承的关系。
 因此你不能简单的将这些方法放入一个基类，然后被其他类继承。</p>
 </section>
 <section id="id2">
-<h2>解决方案<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<h2>解决方案<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
 <p>通常当你想自定义类的时候会碰上这些问题。可能是某个库提供了一些基础类，
 你可以利用它们来构造你自己的类。</p>
 <p>假设你想扩展映射对象，给它们添加日志、唯一性设置、类型检查等等功能。下面是一些混入类：</p>
@@ -199,7 +200,7 @@
 结合后就能发挥正常功效了。</p>
 </section>
 <section id="id3">
-<h2>讨论<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<h2>讨论<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
 <p>混入类在标准库中很多地方都出现过，通常都是用来像上面那样扩展某些类的功能。
 它们也是多继承的一个主要用途。比如，当你编写网络代码时候，
 你会经常使用 <code class="docutils literal notranslate"><span class="pre">socketserver</span></code> 模块中的 <code class="docutils literal notranslate"><span class="pre">ThreadingMixIn</span></code> 来给其他网络相关类增加多线程支持。

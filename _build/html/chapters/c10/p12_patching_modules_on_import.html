@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>10.12 导入模块的同时修改模块 &mdash; Python  documentation</title>
@@ -11,10 +11,11 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -109,14 +110,14 @@
            <div itemprop="articleBody">
              
   <section id="id1">
-<h1>10.12 导入模块的同时修改模块<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h1>
+<h1>10.12 导入模块的同时修改模块<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h1>
 <section id="id2">
-<h2>问题<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<h2>问题<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
 <p>你想给某个已存在模块中的函数添加装饰器。
 不过，前提是这个模块已经被导入并且被使用过。</p>
 </section>
 <section id="id3">
-<h2>解决方案<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<h2>解决方案<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
 <p>这里问题的本质就是你想在模块被加载时执行某个动作。
 可能是你想在一个模块被加载时触发某个回调函数来通知你。</p>
 <p>这个问题可以使用10.11小节中同样的导入钩子机制来实现。下面是一个可能的方案：</p>
@@ -193,7 +194,7 @@
 </div>
 </section>
 <section id="id4">
-<h2>讨论<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h2>
+<h2>讨论<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
 <p>本节技术依赖于10.11小节中讲述过的导入钩子，并稍作修改。</p>
 <p><code class="docutils literal notranslate"><span class="pre">&#64;when_imported</span></code> 装饰器的作用是注册在导入时被激活的处理器函数。
 该装饰器检查sys.modules来查看模块是否真的已经被加载了。

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>6.6 解析和修改XML &mdash; Python  documentation</title>
@@ -11,10 +11,11 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -107,13 +108,13 @@
            <div itemprop="articleBody">
              
   <section id="xml">
-<h1>6.6 解析和修改XML<a class="headerlink" href="#xml" title="Permalink to this headline"></a></h1>
+<h1>6.6 解析和修改XML<a class="headerlink" href="#xml" title="Permalink to this heading"></a></h1>
 <section id="id1">
-<h2>问题<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h2>
+<h2>问题<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
 <p>你想读取一个XML文档，对它做一些修改，然后将结果写回XML文档。</p>
 </section>
 <section id="id2">
-<h2>解决方案<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<h2>解决方案<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
 <p>使用 <code class="docutils literal notranslate"><span class="pre">xml.etree.ElementTree</span></code> 模块可以很容易的处理这些任务。
 第一步是以通常的方式来解析这个文档。例如，假设你有一个名为 <code class="docutils literal notranslate"><span class="pre">pred.xml</span></code> 的文档，类似下面这样：</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
@@ -186,7 +187,7 @@
 </div>
 </section>
 <section id="id3">
-<h2>讨论<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<h2>讨论<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
 <p>修改一个XML文档结构是很容易的，但是你必须牢记的是所有的修改都是针对父节点元素，
 将它作为一个列表来处理。例如，如果你删除某个元素，通过调用父节点的 <code class="docutils literal notranslate"><span class="pre">remove()</span></code> 方法从它的直接父节点中删除。
 如果你插入或增加新的元素，你同样使用父节点元素的 <code class="docutils literal notranslate"><span class="pre">insert()</span></code> 和 <code class="docutils literal notranslate"><span class="pre">append()</span></code> 方法。

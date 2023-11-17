@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>11.10 在网络服务中加入SSL &mdash; Python  documentation</title>
@@ -11,10 +11,11 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -107,13 +108,13 @@
            <div itemprop="articleBody">
              
   <section id="ssl">
-<h1>11.10 在网络服务中加入SSL<a class="headerlink" href="#ssl" title="Permalink to this headline"></a></h1>
+<h1>11.10 在网络服务中加入SSL<a class="headerlink" href="#ssl" title="Permalink to this heading"></a></h1>
 <section id="id1">
-<h2>问题<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h2>
+<h2>问题<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
 <p>你想实现一个基于sockets的网络服务，客户端和服务器通过SSL协议认证并加密传输的数据。</p>
 </section>
 <section id="id2">
-<h2>解决方案<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<h2>解决方案<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">ssl</span></code> 模块能为底层socket连接添加SSL的支持。
 <code class="docutils literal notranslate"><span class="pre">ssl.wrap_socket()</span></code> 函数接受一个已存在的socket作为参数并使用SSL层来包装它。
 例如，下面是一个简单的应答服务器，能在服务器端为所有客户端连接做认证。</p>
@@ -329,7 +330,7 @@
 </div>
 </section>
 <section id="id3">
-<h2>讨论<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<h2>讨论<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
 <p>试着去运行本节的代码能测试你的系统配置能力和理解SSL。
 可能最大的挑战是如何一步步的获取初始配置key、证书和其他所需依赖。</p>
 <p>我解释下到底需要啥，每一个SSL连接终端一般都会有一个私钥和一个签名证书文件。

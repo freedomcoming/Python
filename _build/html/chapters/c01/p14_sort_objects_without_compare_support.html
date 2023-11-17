@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>1.14 排序不支持原生比较的对象 &mdash; Python  documentation</title>
@@ -11,10 +11,11 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -114,13 +115,13 @@
            <div itemprop="articleBody">
              
   <section id="id1">
-<h1>1.14 排序不支持原生比较的对象<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h1>
+<h1>1.14 排序不支持原生比较的对象<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h1>
 <section id="id2">
-<h2>问题<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<h2>问题<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
 <p>你想排序类型相同的对象，但是他们不支持原生的比较操作。</p>
 </section>
 <section id="id3">
-<h2>解决方案<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<h2>解决方案<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
 <p>内置的 <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> 函数有一个关键字参数 <code class="docutils literal notranslate"><span class="pre">key</span></code> ，可以传入一个 <code class="docutils literal notranslate"><span class="pre">callable</span></code> 对象给它，
 这个 <code class="docutils literal notranslate"><span class="pre">callable</span></code> 对象对每个传入的对象返回一个值，这个值会被 <code class="docutils literal notranslate"><span class="pre">sorted</span></code> 用来排序这些对象。
 比如，如果你在应用程序里面有一个 <code class="docutils literal notranslate"><span class="pre">User</span></code> 实例序列，并且你希望通过他们的 <code class="docutils literal notranslate"><span class="pre">user_id</span></code> 属性进行排序，
@@ -148,7 +149,7 @@
 </div>
 </section>
 <section id="id4">
-<h2>讨论<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h2>
+<h2>讨论<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
 <p>选择使用 lambda 函数或者是 <code class="docutils literal notranslate"><span class="pre">attrgetter()</span></code> 可能取决于个人喜好。
 但是， <code class="docutils literal notranslate"><span class="pre">attrgetter()</span></code> 函数通常会运行的快点，并且还能同时允许多个字段进行比较。
 这个跟 <code class="docutils literal notranslate"><span class="pre">operator.itemgetter()</span></code> 函数作用于字典类型很类似（参考1.13小节）。

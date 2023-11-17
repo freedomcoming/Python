@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>15.20 处理C语言中的可迭代对象 &mdash; Python  documentation</title>
@@ -11,10 +11,11 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -115,13 +116,13 @@
            <div itemprop="articleBody">
              
   <section id="c">
-<h1>15.20 处理C语言中的可迭代对象<a class="headerlink" href="#c" title="Permalink to this headline"></a></h1>
+<h1>15.20 处理C语言中的可迭代对象<a class="headerlink" href="#c" title="Permalink to this heading"></a></h1>
 <section id="id1">
-<h2>问题<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h2>
+<h2>问题<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
 <p>你想写C扩展代码处理来自任何可迭代对象如列表、元组、文件或生成器中的元素。</p>
 </section>
 <section id="id2">
-<h2>解决方案<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<h2>解决方案<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
 <p>下面是一个C扩展函数例子，演示了怎样处理可迭代对象中的元素：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>static PyObject *py_consume_iterable(PyObject *self, PyObject *args) {
   PyObject *obj;
@@ -147,7 +148,7 @@
 </div>
 </section>
 <section id="id3">
-<h2>讨论<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<h2>讨论<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
 <p>本节中的代码和Python中对应代码类似。
 <code class="docutils literal notranslate"><span class="pre">PyObject_GetIter()</span></code> 的调用和调用 <code class="docutils literal notranslate"><span class="pre">iter()</span></code> 一样可获得一个迭代器。
 <code class="docutils literal notranslate"><span class="pre">PyIter_Next()</span></code> 函数调用 <code class="docutils literal notranslate"><span class="pre">next</span></code> 方法返回下一个元素或NULL(如果没有元素了)。

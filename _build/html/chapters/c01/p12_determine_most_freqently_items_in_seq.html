@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>1.12 序列中出现次数最多的元素 &mdash; Python  documentation</title>
@@ -11,10 +11,11 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -114,13 +115,13 @@
            <div itemprop="articleBody">
              
   <section id="id1">
-<h1>1.12 序列中出现次数最多的元素<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h1>
+<h1>1.12 序列中出现次数最多的元素<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h1>
 <section id="id2">
-<h2>问题<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<h2>问题<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
 <p>怎样找出一个序列中出现次数最多的元素呢？</p>
 </section>
 <section id="id3">
-<h2>解决方案<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<h2>解决方案<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">collections.Counter</span></code> 类就是专门为这类问题而设计的，
 它甚至有一个有用的 <code class="docutils literal notranslate"><span class="pre">most_common()</span></code> 方法直接给了你答案。</p>
 <p>为了演示，先假设你有一个单词列表并且想找出哪个单词出现频率最高。你可以这样做：</p>
@@ -140,7 +141,7 @@
 </div>
 </section>
 <section id="id4">
-<h2>讨论<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h2>
+<h2>讨论<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
 <p>作为输入， <code class="docutils literal notranslate"><span class="pre">Counter</span></code> 对象可以接受任意的由可哈希（<code class="docutils literal notranslate"><span class="pre">hashable</span></code>）元素构成的序列对象。
 在底层实现上，一个 <code class="docutils literal notranslate"><span class="pre">Counter</span></code> 对象就是一个字典，将元素映射到它出现的次数上。比如：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">word_counts</span><span class="p">[</span><span class="s1">&#39;not&#39;</span><span class="p">]</span>

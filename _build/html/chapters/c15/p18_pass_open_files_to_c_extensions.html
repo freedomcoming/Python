@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>15.18 传递已打开的文件给C扩展 &mdash; Python  documentation</title>
@@ -11,10 +11,11 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -115,13 +116,13 @@
            <div itemprop="articleBody">
              
   <section id="c">
-<h1>15.18 传递已打开的文件给C扩展<a class="headerlink" href="#c" title="Permalink to this headline"></a></h1>
+<h1>15.18 传递已打开的文件给C扩展<a class="headerlink" href="#c" title="Permalink to this heading"></a></h1>
 <section id="id1">
-<h2>问题<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h2>
+<h2>问题<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
 <p>你在Python中有一个打开的文件对象，但是需要将它传给要使用这个文件的C扩展。</p>
 </section>
 <section id="id2">
-<h2>解决方案<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<h2>解决方案<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
 <p>要将一个文件转换为一个整型的文件描述符，使用 <code class="docutils literal notranslate"><span class="pre">PyFile_FromFd()</span></code> ，如下：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PyObject</span> <span class="o">*</span><span class="n">fobj</span><span class="p">;</span>     <span class="o">/*</span> <span class="n">File</span> <span class="nb">object</span> <span class="p">(</span><span class="n">already</span> <span class="n">obtained</span> <span class="n">somehow</span><span class="p">)</span> <span class="o">*/</span>
 <span class="nb">int</span> <span class="n">fd</span> <span class="o">=</span> <span class="n">PyObject_AsFileDescriptor</span><span class="p">(</span><span class="n">fobj</span><span class="p">);</span>
@@ -142,7 +143,7 @@
 NULL表示编码、错误和换行参数使用默认值。</p>
 </section>
 <section id="id3">
-<h2>讨论<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<h2>讨论<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
 <p>如果将Python中的文件对象传给C，有一些注意事项。
 首先，Python通过 <code class="docutils literal notranslate"><span class="pre">io</span></code> 模块执行自己的I/O缓冲。
 在传递任何类型的文件描述符给C之前，你都要首先在相应文件对象上刷新I/O缓冲。

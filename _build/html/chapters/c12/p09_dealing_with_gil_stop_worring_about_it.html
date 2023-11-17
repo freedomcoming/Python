@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>12.9 Python的全局锁问题 &mdash; Python  documentation</title>
@@ -11,10 +11,11 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -108,13 +109,13 @@
            <div itemprop="articleBody">
              
   <section id="python">
-<h1>12.9 Python的全局锁问题<a class="headerlink" href="#python" title="Permalink to this headline"></a></h1>
+<h1>12.9 Python的全局锁问题<a class="headerlink" href="#python" title="Permalink to this heading"></a></h1>
 <section id="id1">
-<h2>问题<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h2>
+<h2>问题<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
 <p>你已经听说过全局解释器锁GIL，担心它会影响到多线程程序的执行性能。</p>
 </section>
 <section id="id2">
-<h2>解决方案<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<h2>解决方案<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
 <p>尽管Python完全支持多线程编程，
 但是解释器的C语言实现部分在完全并行执行时并不是线程安全的。
 实际上，解释器被一个全局解释器锁保护着，它确保任何时候都只有一个Python线程执行。
@@ -199,7 +200,7 @@ GIL最大的问题就是Python的多线程程序并不能利用多核CPU的优�
 例如，ctypes在调用C时会自动释放GIL。</p>
 </section>
 <section id="id3">
-<h2>讨论<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<h2>讨论<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
 <p>许多程序员在面对线程性能问题的时候，马上就会怪罪GIL，什么都是它的问题。
 其实这样子太不厚道也太天真了点。
 作为一个真实的例子，在多线程的网络编程中神秘的 <code class="docutils literal notranslate"><span class="pre">stalls</span></code>

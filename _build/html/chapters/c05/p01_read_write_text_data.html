@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>5.1 读写文本数据 &mdash; Python  documentation</title>
@@ -11,10 +11,11 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -115,13 +116,13 @@
            <div itemprop="articleBody">
              
   <section id="id1">
-<h1>5.1 读写文本数据<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h1>
+<h1>5.1 读写文本数据<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h1>
 <section id="id2">
-<h2>问题<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<h2>问题<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
 <p>你需要读写各种不同编码的文本数据，比如ASCII，UTF-8或UTF-16编码等。</p>
 </section>
 <section id="id3">
-<h2>解决方案<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<h2>解决方案<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
 <p>使用带有 <code class="docutils literal notranslate"><span class="pre">rt</span></code> 模式的 <code class="docutils literal notranslate"><span class="pre">open()</span></code> 函数读取文本文件。如下所示：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read the entire file as a single string</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;somefile.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;rt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
@@ -166,7 +167,7 @@ latin-1是字节0-255到U+0000至U+00FF范围内Unicode字符的直接映射。
 但是它也能从中提取出足够多的有用数据。同时，如果你之后将数据回写回去，原先的数据还是会保留的。</p>
 </section>
 <section id="id4">
-<h2>讨论<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h2>
+<h2>讨论<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
 <p>读写文本文件一般来讲是比较简单的。但是也有几点是需要注意的。
 首先，在例子程序中的with语句给被使用到的文件创建了一个上下文环境，
 但 <code class="docutils literal notranslate"><span class="pre">with</span></code> 控制块结束时，文件会自动关闭。你也可以不使用 <code class="docutils literal notranslate"><span class="pre">with</span></code> 语句，但是这时候你就必须记得手动关闭文件：</p>

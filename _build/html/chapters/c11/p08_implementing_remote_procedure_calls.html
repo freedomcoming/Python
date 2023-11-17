@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>11.8 实现远程方法调用 &mdash; Python  documentation</title>
@@ -11,10 +11,11 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -107,14 +108,14 @@
            <div itemprop="articleBody">
              
   <section id="id1">
-<h1>11.8 实现远程方法调用<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h1>
+<h1>11.8 实现远程方法调用<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h1>
 <section id="id2">
-<h2>问题<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<h2>问题<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
 <p>你想在一个消息传输层如 <code class="docutils literal notranslate"><span class="pre">sockets</span></code> 、<code class="docutils literal notranslate"><span class="pre">multiprocessing</span> <span class="pre">connections</span></code> 或 <code class="docutils literal notranslate"><span class="pre">ZeroMQ</span></code>
 的基础之上实现一个简单的远程过程调用（RPC）。</p>
 </section>
 <section id="id3">
-<h2>解决方案<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<h2>解决方案<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
 <p>将函数请求、参数和返回值使用pickle编码后，在不同的解释器直接传送pickle字节字符串，可以很容易的实现RPC。
 下面是一个简单的PRC处理器，可以被整合到一个服务器中去：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># rpcserver.py</span>
@@ -209,7 +210,7 @@
 如果是这样的话，对 <code class="docutils literal notranslate"><span class="pre">pickle.dumps()</span></code> 和 <code class="docutils literal notranslate"><span class="pre">pickle.loads()</span></code> 的调用要去掉。</p>
 </section>
 <section id="id4">
-<h2>讨论<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h2>
+<h2>讨论<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">RPCHandler</span></code> 和 <code class="docutils literal notranslate"><span class="pre">RPCProxy</span></code> 的基本思路是很比较简单的。
 如果一个客户端想要调用一个远程函数，比如 <code class="docutils literal notranslate"><span class="pre">foo(1,</span> <span class="pre">2,</span> <span class="pre">z=3)</span></code>
 ,代理类创建一个包含了函数名和参数的元组 <code class="docutils literal notranslate"><span class="pre">('foo',</span> <span class="pre">(1,</span> <span class="pre">2),</span> <span class="pre">{'z':</span> <span class="pre">3})</span></code> 。

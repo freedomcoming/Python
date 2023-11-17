@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>4.4 实现迭代器协议 &mdash; Python  documentation</title>
@@ -11,10 +11,11 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -110,13 +111,13 @@
            <div itemprop="articleBody">
              
   <section id="id1">
-<h1>4.4 实现迭代器协议<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h1>
+<h1>4.4 实现迭代器协议<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h1>
 <section id="id2">
-<h2>问题<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<h2>问题<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
 <p>你想构建一个能支持迭代操作的自定义对象，并希望找到一个能实现迭代协议的简单方法。</p>
 </section>
 <section id="id3">
-<h2>解决方案<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<h2>解决方案<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
 <p>目前为止，在一个对象上实现迭代最简单的方式是使用一个生成器函数。
 在4.2小节中，使用Node类来表示树形数据结构。你可能想实现一个以深度优先方式遍历树形节点的生成器。
 下面是代码示例：</p>
@@ -160,7 +161,7 @@
 通过调用子节点的 <code class="docutils literal notranslate"><span class="pre">depth_first()</span></code> 方法(使用 <code class="docutils literal notranslate"><span class="pre">yield</span> <span class="pre">from</span></code> 语句)返回对应元素。</p>
 </section>
 <section id="id4">
-<h2>讨论<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h2>
+<h2>讨论<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
 <p>Python的迭代协议要求一个 <code class="docutils literal notranslate"><span class="pre">__iter__()</span></code> 方法返回一个特殊的迭代器对象，
 这个迭代器对象实现了 <code class="docutils literal notranslate"><span class="pre">__next__()</span></code> 方法并通过 <code class="docutils literal notranslate"><span class="pre">StopIteration</span></code> 异常标识迭代的完成。
 但是，实现这些通常会比较繁琐。

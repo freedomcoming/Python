@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>15.16 不确定编码格式的C字符串 &mdash; Python  documentation</title>
@@ -11,10 +11,11 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -115,15 +116,15 @@
            <div itemprop="articleBody">
              
   <section id="c">
-<h1>15.16 不确定编码格式的C字符串<a class="headerlink" href="#c" title="Permalink to this headline"></a></h1>
+<h1>15.16 不确定编码格式的C字符串<a class="headerlink" href="#c" title="Permalink to this heading"></a></h1>
 <section id="id1">
-<h2>问题<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h2>
+<h2>问题<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
 <p>你要在C和Python直接来回转换字符串，但是C中的编码格式并不确定。
 例如，可能C中的数据期望是UTF-8，但是并没有强制它必须是。
 你想编写代码来以一种优雅的方式处理这些不合格数据，这样就不会让Python奔溃或者破坏进程中的字符串数据。</p>
 </section>
 <section id="id2">
-<h2>解决方案<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<h2>解决方案<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
 <p>下面是一些C的数据和一个函数来演示这个问题：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/*</span> <span class="n">Some</span> <span class="n">dubious</span> <span class="n">string</span> <span class="n">data</span> <span class="p">(</span><span class="n">malformed</span> <span class="n">UTF</span><span class="o">-</span><span class="mi">8</span><span class="p">)</span> <span class="o">*/</span>
 <span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">sdata</span> <span class="o">=</span> <span class="s2">&quot;Spicy Jalape</span><span class="se">\xc3\xb1</span><span class="s2">o</span><span class="se">\xae</span><span class="s2">&quot;</span><span class="p">;</span>
@@ -187,7 +188,7 @@ static PyObject *py_print_chars(PyObject *self, PyObject *args) {
 并且当它被回传给C的时候，被转换为和之前原始C字符串一样的字节。</p>
 </section>
 <section id="id3">
-<h2>讨论<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<h2>讨论<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
 <p>本节展示了在扩展模块中处理字符串时会配到的一个棘手又很恼火的问题。
 也就是说，在扩展中的C字符串可能不会严格遵循Python所期望的Unicode编码/解码规则。
 因此，很可能一些不合格C数据传递到Python中去。

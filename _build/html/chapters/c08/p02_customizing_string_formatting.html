@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>8.2 自定义字符串的格式化 &mdash; Python  documentation</title>
@@ -11,10 +11,11 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -119,13 +120,13 @@
            <div itemprop="articleBody">
              
   <section id="id1">
-<h1>8.2 自定义字符串的格式化<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h1>
+<h1>8.2 自定义字符串的格式化<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h1>
 <section id="id2">
-<h2>问题<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<h2>问题<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
 <p>你想通过 <code class="docutils literal notranslate"><span class="pre">format()</span></code> 函数和字符串方法使得一个对象能支持自定义的格式化。</p>
 </section>
 <section id="id3">
-<h2>解决方案<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<h2>解决方案<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
 <p>为了自定义字符串的格式化，我们需要在类上面定义 <code class="docutils literal notranslate"><span class="pre">__format__()</span></code> 方法。例如：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">_formats</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;ymd&#39;</span> <span class="p">:</span> <span class="s1">&#39;</span><span class="si">{d.year}</span><span class="s1">-</span><span class="si">{d.month}</span><span class="s1">-</span><span class="si">{d.day}</span><span class="s1">&#39;</span><span class="p">,</span>
@@ -161,7 +162,7 @@
 </div>
 </section>
 <section id="id4">
-<h2>讨论<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h2>
+<h2>讨论<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">__format__()</span></code> 方法给Python的字符串格式化功能提供了一个钩子。
 这里需要着重强调的是格式化代码的解析工作完全由类自己决定。因此，格式化代码可以是任何值。
 例如，参考下面来自 <code class="docutils literal notranslate"><span class="pre">datetime</span></code> 模块中的代码：</p>

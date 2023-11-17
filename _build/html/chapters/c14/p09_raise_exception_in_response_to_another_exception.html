@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>14.9 捕获异常后抛出另外的异常 &mdash; Python  documentation</title>
@@ -11,10 +11,11 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -108,13 +109,13 @@
            <div itemprop="articleBody">
              
   <section id="id1">
-<h1>14.9 捕获异常后抛出另外的异常<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h1>
+<h1>14.9 捕获异常后抛出另外的异常<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h1>
 <section id="id2">
-<h2>问题<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<h2>问题<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
 <p>你想捕获一个异常后抛出另外一个不同的异常，同时还得在异常回溯中保留两个异常的信息。</p>
 </section>
 <section id="id3">
-<h2>解决方案<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<h2>解决方案<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
 <p>为了链接异常，使用 <code class="docutils literal notranslate"><span class="pre">raise</span> <span class="pre">from</span></code> 语句来代替简单的 <code class="docutils literal notranslate"><span class="pre">raise</span></code> 语句。
 它会让你同时保留两个异常的信息。例如：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
@@ -191,7 +192,7 @@
 </div>
 </section>
 <section id="id4">
-<h2>讨论<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h2>
+<h2>讨论<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
 <p>在设计代码时，在另外一个 <code class="docutils literal notranslate"><span class="pre">except</span></code> 代码块中使用 <code class="docutils literal notranslate"><span class="pre">raise</span></code> 语句的时候你要特别小心了。
 大多数情况下，这种 <code class="docutils literal notranslate"><span class="pre">raise</span></code> 语句都应该被改成 <code class="docutils literal notranslate"><span class="pre">raise</span> <span class="pre">from</span></code> 语句。也就是说你应该使用下面这种形式：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>

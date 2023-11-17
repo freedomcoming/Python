@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>15.15 C字符串转换为Python字符串 &mdash; Python  documentation</title>
@@ -11,10 +11,11 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -115,13 +116,13 @@
            <div itemprop="articleBody">
              
   <section id="cpython">
-<h1>15.15 C字符串转换为Python字符串<a class="headerlink" href="#cpython" title="Permalink to this headline"></a></h1>
+<h1>15.15 C字符串转换为Python字符串<a class="headerlink" href="#cpython" title="Permalink to this heading"></a></h1>
 <section id="id1">
-<h2>问题<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h2>
+<h2>问题<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
 <p>怎样将C中的字符串转换为Python字节或一个字符串对象？</p>
 </section>
 <section id="id2">
-<h2>解决方案<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<h2>解决方案<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
 <p>C字符串使用一对 <code class="docutils literal notranslate"><span class="pre">char</span> <span class="pre">*</span></code> 和 <code class="docutils literal notranslate"><span class="pre">int</span></code> 来表示，
 你需要决定字符串到底是用一个原始字节字符串还是一个Unicode字符串来表示。
 字节对象可以像下面这样使用 <code class="docutils literal notranslate"><span class="pre">Py_BuildValue()</span></code> 来构建：</p>
@@ -159,7 +160,7 @@
 <p>对于宽字符串，并没有对字符数据进行解析——它被假定是原始Unicode编码指针，可以被直接转换成Python。</p>
 </section>
 <section id="id3">
-<h2>讨论<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<h2>讨论<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
 <p>将C中的字符串转换为Python字符串遵循和I/O同样的原则。
 也就是说，来自C中的数据必须根据一些解码器被显式的解码为一个字符串。
 通常编码格式包括ASCII、Latin-1和UTF-8.

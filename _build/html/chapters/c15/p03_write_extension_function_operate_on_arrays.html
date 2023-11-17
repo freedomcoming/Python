@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>15.3 编写扩展函数操作数组 &mdash; Python  documentation</title>
@@ -11,10 +11,11 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -115,14 +116,14 @@
            <div itemprop="articleBody">
              
   <section id="id1">
-<h1>15.3 编写扩展函数操作数组<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h1>
+<h1>15.3 编写扩展函数操作数组<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h1>
 <section id="id2">
-<h2>问题<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<h2>问题<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
 <p>你想编写一个C扩展函数来操作数组，可能是被array模块或类似Numpy库所创建。
 不过，你想让你的函数更加通用，而不是针对某个特定的库所生成的数组。</p>
 </section>
 <section id="id3">
-<h2>解决方案<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<h2>解决方案<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
 <p>为了能让接受和处理数组具有可移植性，你需要使用到 <cite>Buffer Protocol</cite> .
 下面是一个手写的C扩展函数例子，
 用来接受数组数据并调用本章开篇部分的 <code class="docutils literal notranslate"><span class="pre">avg(double</span> <span class="pre">*buf,</span> <span class="pre">int</span> <span class="pre">len)</span></code> 函数：</p>
@@ -198,7 +199,7 @@ static PyObject *py_avg(PyObject *self, PyObject *args) {
 </div>
 </section>
 <section id="id4">
-<h2>讨论<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h2>
+<h2>讨论<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
 <p>将一个数组对象传给C函数可能是一个扩展函数做的最常见的事。
 很多Python应用程序，从图像处理到科学计算，都是基于高性能的数组处理。
 通过编写能接受并操作数组的代码，你可以编写很好的兼容这些应用程序的自定义代码，

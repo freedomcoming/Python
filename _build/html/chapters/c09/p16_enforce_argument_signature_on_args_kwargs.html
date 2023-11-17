@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>9.16 *args和**kwargs的强制参数签名 &mdash; Python  documentation</title>
@@ -11,10 +11,11 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -119,14 +120,14 @@
            <div itemprop="articleBody">
              
   <section id="args-kwargs">
-<h1>9.16 <a href="#id1"><span class="problematic" id="id2">*</span></a>args和**kwargs的强制参数签名<a class="headerlink" href="#args-kwargs" title="Permalink to this headline"></a></h1>
+<h1>9.16 <a href="#id1"><span class="problematic" id="id2">*</span></a>args和**kwargs的强制参数签名<a class="headerlink" href="#args-kwargs" title="Permalink to this heading"></a></h1>
 <section id="id3">
-<h2>问题<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<h2>问题<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
 <p>你有一个函数或方法，它使用*args和**kwargs作为参数，这样使得它比较通用，
 但有时候你想检查传递进来的参数是不是某个你想要的类型。</p>
 </section>
 <section id="id4">
-<h2>解决方案<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h2>
+<h2>解决方案<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
 <p>对任何涉及到操作函数调用签名的问题，你都应该使用 <code class="docutils literal notranslate"><span class="pre">inspect</span></code> 模块中的签名特性。
 我们最主要关注两个类：<code class="docutils literal notranslate"><span class="pre">Signature</span></code> 和 <code class="docutils literal notranslate"><span class="pre">Parameter</span></code> 。下面是一个创建函数前面的交互例子：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">inspect</span> <span class="kn">import</span> <span class="n">Signature</span><span class="p">,</span> <span class="n">Parameter</span>
@@ -224,7 +225,7 @@
 </div>
 </section>
 <section id="id5">
-<h2>讨论<a class="headerlink" href="#id5" title="Permalink to this headline"></a></h2>
+<h2>讨论<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h2>
 <p>在我们需要构建通用函数库、编写装饰器或实现代理的时候，对于 <code class="docutils literal notranslate"><span class="pre">*args</span></code> 和 <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code> 的使用是很普遍的。
 但是，这样的函数有一个缺点就是当你想要实现自己的参数检验时，代码就会笨拙混乱。在8.11小节里面有这样一个例子。
 这时候我们可以通过一个签名对象来简化它。</p>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>4.8 跳过可迭代对象的开始部分 &mdash; Python  documentation</title>
@@ -11,10 +11,11 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -110,13 +111,13 @@
            <div itemprop="articleBody">
              
   <section id="id1">
-<h1>4.8 跳过可迭代对象的开始部分<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h1>
+<h1>4.8 跳过可迭代对象的开始部分<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h1>
 <section id="id2">
-<h2>问题<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<h2>问题<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
 <p>你想遍历一个可迭代对象，但是它开始的某些元素你并不感兴趣，想跳过它们。</p>
 </section>
 <section id="id3">
-<h2>解决方案<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<h2>解决方案<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">itertools</span></code> 模块中有一些函数可以完成这个任务。
 首先介绍的是 <code class="docutils literal notranslate"><span class="pre">itertools.dropwhile()</span></code> 函数。使用时，你给它传递一个函数对象和一个可迭代对象。
 它会返回一个迭代器对象，丢弃原有序列中直到函数返回False之前的所有元素，然后返回后面所有元素。</p>
@@ -169,7 +170,7 @@
 (这个跟切片的相反操作 <code class="docutils literal notranslate"><span class="pre">[3:]</span></code> 和 <code class="docutils literal notranslate"><span class="pre">[:3]</span></code> 原理是一样的)。</p>
 </section>
 <section id="id4">
-<h2>讨论<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h2>
+<h2>讨论<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
 <p>函数 <code class="docutils literal notranslate"><span class="pre">dropwhile()</span></code> 和 <code class="docutils literal notranslate"><span class="pre">islice()</span></code> 其实就是两个帮助函数，为的就是避免写出下面这种冗余代码：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/etc/passwd&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="c1"># Skip over initial comments</span>

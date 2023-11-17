@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>11.11 进程间传递Socket文件描述符 &mdash; Python  documentation</title>
@@ -11,10 +11,11 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -107,14 +108,14 @@
            <div itemprop="articleBody">
              
   <section id="socket">
-<h1>11.11 进程间传递Socket文件描述符<a class="headerlink" href="#socket" title="Permalink to this headline"></a></h1>
+<h1>11.11 进程间传递Socket文件描述符<a class="headerlink" href="#socket" title="Permalink to this heading"></a></h1>
 <section id="id1">
-<h2>问题<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h2>
+<h2>问题<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
 <p>你有多个Python解释器进程在同时运行，你想将某个打开的文件描述符从一个解释器传递给另外一个。
 比如，假设有个服务器进程相应连接请求，但是实际的响应逻辑是在另一个解释器中执行的。</p>
 </section>
 <section id="id2">
-<h2>解决方案<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<h2>解决方案<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
 <p>为了在多个进程中传递文件描述符，你首先需要将它们连接到一起。在Unix机器上，你可能需要使用Unix域套接字，
 而在windows上面你需要使用命名管道。不过你无需真的需要去操作这些底层，
 通常使用 <code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code> 模块来创建这样的连接会更容易一些。</p>
@@ -180,7 +181,7 @@ CHILD: RECV b’Worldrn’</p>
 服务器仅仅只是将其转手并关闭此连接，然后等待下一个连接。</p>
 </section>
 <section id="id3">
-<h2>讨论<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<h2>讨论<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
 <p>对于大部分程序员来讲在不同进程之间传递文件描述符好像没什么必要。
 但是，有时候它是构建一个可扩展系统的很有用的工具。例如，在一个多核机器上面，
 你可以有多个Python解释器实例，将文件描述符传递给其它解释器来实现负载均衡。</p>

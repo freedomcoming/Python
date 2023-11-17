@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>14.2 在单元测试中给对象打补丁 &mdash; Python  documentation</title>
@@ -11,10 +11,11 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -108,14 +109,14 @@
            <div itemprop="articleBody">
              
   <section id="id1">
-<h1>14.2 在单元测试中给对象打补丁<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h1>
+<h1>14.2 在单元测试中给对象打补丁<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h1>
 <section id="id2">
-<h2>问题<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<h2>问题<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
 <p>你写的单元测试中需要给指定的对象打补丁，
 用来断言它们在测试中的期望行为（比如，断言被调用时的参数个数，访问指定的属性等）。</p>
 </section>
 <section id="id3">
-<h2>解决方案<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<h2>解决方案<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">unittest.mock.patch()</span></code> 函数可被用来解决这个问题。
 <code class="docutils literal notranslate"><span class="pre">patch()</span></code> 还可被用作一个装饰器、上下文管理器或单独使用，尽管并不常见。
 例如，下面是一个将它当做装饰器使用的例子：</p>
@@ -158,7 +159,7 @@
 </div>
 </section>
 <section id="id4">
-<h2>讨论<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h2>
+<h2>讨论<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">patch()</span></code> 接受一个已存在对象的全路径名，将其替换为一个新的值。
 原来的值会在装饰器函数或上下文管理器完成后自动恢复回来。
 默认情况下，所有值会被 <code class="docutils literal notranslate"><span class="pre">MagicMock</span></code> 实例替代。例如：</p>

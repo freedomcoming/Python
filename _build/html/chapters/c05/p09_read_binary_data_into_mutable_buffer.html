@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>5.9 读取二进制数据到可变缓冲区中 &mdash; Python  documentation</title>
@@ -11,10 +11,11 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -115,14 +116,14 @@
            <div itemprop="articleBody">
              
   <section id="id1">
-<h1>5.9 读取二进制数据到可变缓冲区中<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h1>
+<h1>5.9 读取二进制数据到可变缓冲区中<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h1>
 <section id="id2">
-<h2>问题<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<h2>问题<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
 <p>你想直接读取二进制数据到一个可变缓冲区中，而不需要做任何的中间复制操作。
 或者你想原地修改数据并将它写回到一个文件中去。</p>
 </section>
 <section id="id3">
-<h2>解决方案<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<h2>解决方案<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
 <p>为了读取数据到一个可变数组中，使用文件对象的 <code class="docutils literal notranslate"><span class="pre">readinto()</span></code> 方法。比如：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os.path</span>
 
@@ -153,7 +154,7 @@
 </div>
 </section>
 <section id="id4">
-<h2>讨论<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h2>
+<h2>讨论<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
 <p>文件对象的 <code class="docutils literal notranslate"><span class="pre">readinto()</span></code> 方法能被用来为预先分配内存的数组填充数据，甚至包括由 <code class="docutils literal notranslate"><span class="pre">array</span></code> 模块或 <code class="docutils literal notranslate"><span class="pre">numpy</span></code> 库创建的数组。
 和普通 <code class="docutils literal notranslate"><span class="pre">read()</span></code> 方法不同的是， <code class="docutils literal notranslate"><span class="pre">readinto()</span></code> 填充已存在的缓冲区而不是为新对象重新分配内存再返回它们。
 因此，你可以使用它来避免大量的内存分配操作。

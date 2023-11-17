@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>1.11 命名切片 &mdash; Python  documentation</title>
@@ -11,10 +11,11 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -114,13 +115,13 @@
            <div itemprop="articleBody">
              
   <section id="id1">
-<h1>1.11 命名切片<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h1>
+<h1>1.11 命名切片<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h1>
 <section id="id2">
-<h2>问题<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<h2>问题<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
 <p>如果你的程序包含了大量无法直视的硬编码切片，并且你想清理一下代码。</p>
 </section>
 <section id="id3">
-<h2>解决方案<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<h2>解决方案<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
 <p>假定你要从一个记录（比如文件或其他类似格式）中的某些固定位置提取字段：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">######    0123456789012345678901234567890123456789012345678901234567890&#39;</span>
 <span class="n">record</span> <span class="o">=</span> <span class="s1">&#39;....................100 .......513.25 ..........&#39;</span>
@@ -136,7 +137,7 @@
 <p>在这个版本中，你避免了使用大量难以理解的硬编码下标。这使得你的代码更加清晰可读。</p>
 </section>
 <section id="id4">
-<h2>讨论<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h2>
+<h2>讨论<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
 <p>一般来讲，代码中如果出现大量的硬编码下标会使得代码的可读性和可维护性大大降低。
 比如，如果你回过来看看一年前你写的代码，你会摸着脑袋想自己那时候到底在想什么啊。
 下面这个很简单的解决方案，可以让你更加清晰地表达代码的目的。</p>

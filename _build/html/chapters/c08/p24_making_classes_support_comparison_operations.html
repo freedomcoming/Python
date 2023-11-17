@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>8.24 让类支持比较操作 &mdash; Python  documentation</title>
@@ -11,10 +11,11 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -119,13 +120,13 @@
            <div itemprop="articleBody">
              
   <section id="id1">
-<h1>8.24 让类支持比较操作<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h1>
+<h1>8.24 让类支持比较操作<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h1>
 <section id="id2">
-<h2>问题<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<h2>问题<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
 <p>你想让某个类的实例支持标准的比较运算(比如&gt;=,!=,&lt;=,&lt;等)，但是又不想去实现那一大丢的特殊方法。</p>
 </section>
 <section id="id3">
-<h2>解决方案<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<h2>解决方案<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
 <p>Python类对每个比较操作都需要实现一个特殊方法来支持。
 例如为了支持&gt;=操作符，你需要定义一个 <code class="docutils literal notranslate"><span class="pre">__ge__()</span></code> 方法。
 尽管定义一个方法没什么问题，但如果要你实现所有可能的比较方法那就有点烦人了。</p>
@@ -195,7 +196,7 @@
 </div>
 </section>
 <section id="id4">
-<h2>讨论<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h2>
+<h2>讨论<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
 <p>其实 <code class="docutils literal notranslate"><span class="pre">total_ordering</span></code> 装饰器也没那么神秘。
 它就是定义了一个从每个比较支持方法到所有需要定义的其他方法的一个映射而已。
 比如你定义了 <code class="docutils literal notranslate"><span class="pre">__le__()</span></code> 方法，那么它就被用来构建所有其他的需要定义的那些特殊方法。

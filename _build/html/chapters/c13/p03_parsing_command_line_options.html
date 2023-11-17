@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>13.3 解析命令行选项 &mdash; Python  documentation</title>
@@ -11,10 +11,11 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -109,13 +110,13 @@
            <div itemprop="articleBody">
              
   <section id="id1">
-<h1>13.3 解析命令行选项<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h1>
+<h1>13.3 解析命令行选项<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h1>
 <section id="id2">
-<h2>问题<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<h2>问题<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
 <p>你的程序如何能够解析命令行选项（位于sys.argv中）</p>
 </section>
 <section id="id3">
-<h2>解决方案<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<h2>解决方案<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">argparse</span></code> 模块可被用来解析命令行选项。下面一个简单例子演示了最基本的用法：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># search.py</span>
 <span class="sd">&#39;&#39;&#39;</span>
@@ -202,7 +203,7 @@
 <p>对于选项值的进一步处理由程序来决定，用你自己的逻辑来替代 <code class="docutils literal notranslate"><span class="pre">print()</span></code> 函数。</p>
 </section>
 <section id="id4">
-<h2>讨论<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h2>
+<h2>讨论<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">argparse</span></code> 模块是标准库中最大的模块之一，拥有大量的配置选项。
 本节只是演示了其中最基础的一些特性，帮助你入门。</p>
 <p>为了解析命令行选项，你首先要创建一个 <code class="docutils literal notranslate"><span class="pre">ArgumentParser</span></code> 实例，

@@ -12,7 +12,7 @@ import sys
 sys.path.insert(0, os.path.abspath('src'))
 
 project = 'Python'
-copyright = '2023, karl'
+copyright = '2023, karl wang'
 author = 'karl'
 
 # -- General configuration ---------------------------------------------------

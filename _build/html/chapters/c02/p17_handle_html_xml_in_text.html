@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>2.17 在字符串中处理html和xml &mdash; Python  documentation</title>
@@ -11,10 +11,11 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -114,14 +115,14 @@
            <div itemprop="articleBody">
              
   <section id="htmlxml">
-<h1>2.17 在字符串中处理html和xml<a class="headerlink" href="#htmlxml" title="Permalink to this headline"></a></h1>
+<h1>2.17 在字符串中处理html和xml<a class="headerlink" href="#htmlxml" title="Permalink to this heading"></a></h1>
 <section id="id1">
-<h2>问题<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h2>
+<h2>问题<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
 <p>你想将HTML或者XML实体如 <code class="docutils literal notranslate"><span class="pre">&amp;entity;</span></code> 或 <code class="docutils literal notranslate"><span class="pre">&amp;#code;</span></code> 替换为对应的文本。
 再者，你需要转换文本中特定的字符(比如&lt;, &gt;, 或 &amp;)。</p>
 </section>
 <section id="id2">
-<h2>解决方案<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<h2>解决方案<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
 <p>如果你想替换文本字符串中的 ‘&lt;’ 或者 ‘&gt;’ ，使用 <code class="docutils literal notranslate"><span class="pre">html.escape()</span></code> 函数可以很容易的完成。比如：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;Elements are written as &quot;&lt;tag&gt;text&lt;/tag&gt;&quot;.&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">html</span>
@@ -164,7 +165,7 @@
 </div>
 </section>
 <section id="id3">
-<h2>讨论<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<h2>讨论<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
 <p>在生成HTML或者XML文本的时候，如果正确的转换特殊标记字符是一个很容易被忽视的细节。
 特别是当你使用 <code class="docutils literal notranslate"><span class="pre">print()</span></code> 函数或者其他字符串格式化来产生输出的时候。
 使用像 <code class="docutils literal notranslate"><span class="pre">html.escape()</span></code> 的工具函数可以很容易的解决这类问题。</p>

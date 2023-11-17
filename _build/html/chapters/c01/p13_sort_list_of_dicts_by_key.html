@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>1.13 通过某个关键字排序一个字典列表 &mdash; Python  documentation</title>
@@ -11,10 +11,11 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -114,13 +115,13 @@
            <div itemprop="articleBody">
              
   <section id="id1">
-<h1>1.13 通过某个关键字排序一个字典列表<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h1>
+<h1>1.13 通过某个关键字排序一个字典列表<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h1>
 <section id="id2">
-<h2>问题<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<h2>问题<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
 <p>你有一个字典列表，你想根据某个或某几个字典字段来排序这个列表。</p>
 </section>
 <section id="id3">
-<h2>解决方案<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<h2>解决方案<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
 <p>通过使用 <code class="docutils literal notranslate"><span class="pre">operator</span></code> 模块的 <code class="docutils literal notranslate"><span class="pre">itemgetter</span></code> 函数，可以非常容易的排序这样的数据结构。
 假设你从数据库中检索出来网站会员信息列表，并且以下列的数据结构返回：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rows</span> <span class="o">=</span> <span class="p">[</span>
@@ -164,7 +165,7 @@
 </div>
 </section>
 <section id="id4">
-<h2>讨论<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h2>
+<h2>讨论<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
 <p>在上面例子中， <code class="docutils literal notranslate"><span class="pre">rows</span></code> 被传递给接受一个关键字参数的 <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> 内置函数。
 这个参数是 <code class="docutils literal notranslate"><span class="pre">callable</span></code> 类型，并且从 <code class="docutils literal notranslate"><span class="pre">rows</span></code> 中接受一个单一元素，然后返回被用来排序的值。
 <code class="docutils literal notranslate"><span class="pre">itemgetter()</span></code> 函数就是负责创建这个 <code class="docutils literal notranslate"><span class="pre">callable</span></code> 对象的。</p>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>6.11 读写二进制数组数据 &mdash; Python  documentation</title>
@@ -11,10 +11,11 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -107,13 +108,13 @@
            <div itemprop="articleBody">
              
   <section id="id1">
-<h1>6.11 读写二进制数组数据<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h1>
+<h1>6.11 读写二进制数组数据<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h1>
 <section id="id2">
-<h2>问题<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<h2>问题<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
 <p>你想读写一个二进制数组的结构化数据到Python元组中。</p>
 </section>
 <section id="id3">
-<h2>解决方案<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<h2>解决方案<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
 <p>可以使用 <code class="docutils literal notranslate"><span class="pre">struct</span></code> 模块处理二进制数据。
 下面是一段示例代码将一个Python元组列表写入一个二进制文件，并使用 <code class="docutils literal notranslate"><span class="pre">struct</span></code> 将每个元组编码为一个结构体。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">struct</span> <span class="kn">import</span> <span class="n">Struct</span>
@@ -171,7 +172,7 @@
 <p>两种情况下的结果都是一个可返回用来创建该文件的原始元组的可迭代对象。</p>
 </section>
 <section id="id4">
-<h2>讨论<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h2>
+<h2>讨论<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
 <p>对于需要编码和解码二进制数据的程序而言，通常会使用 <code class="docutils literal notranslate"><span class="pre">struct</span></code> 模块。
 为了声明一个新的结构体，只需要像这样创建一个 <code class="docutils literal notranslate"><span class="pre">Struct</span></code> 实例即可：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Little endian 32-bit integer, two double precision floats</span>

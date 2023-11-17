@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>4.13 创建数据处理管道 &mdash; Python  documentation</title>
@@ -11,10 +11,11 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -110,14 +111,14 @@
            <div itemprop="articleBody">
              
   <section id="id1">
-<h1>4.13 创建数据处理管道<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h1>
+<h1>4.13 创建数据处理管道<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h1>
 <section id="id2">
-<h2>问题<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<h2>问题<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
 <p>你想以数据管道(类似Unix管道)的方式迭代处理数据。
 比如，你有个大量的数据需要处理，但是不能将它们一次性放入内存中。</p>
 </section>
 <section id="id3">
-<h2>解决方案<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<h2>解决方案<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
 <p>生成器函数是一个实现管道机制的好办法。
 为了演示，假定你要处理一个非常大的日志文件目录：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">foo</span><span class="o">/</span>
@@ -210,7 +211,7 @@
 </div>
 </section>
 <section id="id4">
-<h2>讨论<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h2>
+<h2>讨论<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
 <p>以管道方式处理数据可以用来解决各类其他问题，包括解析，读取实时数据，定时轮询等。</p>
 <p>为了理解上述代码，重点是要明白 <code class="docutils literal notranslate"><span class="pre">yield</span></code> 语句作为数据的生产者而 <code class="docutils literal notranslate"><span class="pre">for</span></code> 循环语句作为数据的消费者。
 当这些生成器被连在一起后，每个 <code class="docutils literal notranslate"><span class="pre">yield</span></code> 会将一个单独的数据元素传递给迭代处理管道的下一阶段。

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>15.11 用Cython写高性能的数组操作 &mdash; Python  documentation</title>
@@ -11,10 +11,11 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -115,14 +116,14 @@
            <div itemprop="articleBody">
              
   <section id="cython">
-<h1>15.11 用Cython写高性能的数组操作<a class="headerlink" href="#cython" title="Permalink to this headline"></a></h1>
+<h1>15.11 用Cython写高性能的数组操作<a class="headerlink" href="#cython" title="Permalink to this heading"></a></h1>
 <section id="id1">
-<h2>问题<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h2>
+<h2>问题<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
 <p>你要写高性能的操作来自NumPy之类的数组计算函数。
 你已经知道了Cython这样的工具会让它变得简单，但是并不确定该怎样去做。</p>
 </section>
 <section id="id2">
-<h2>解决方案<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<h2>解决方案<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
 <p>作为一个例子，下面的代码演示了一个Cython函数，用来修整一个简单的一维双精度浮点数数组中元素的值。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># sample.pyx (Cython)</span>
 
@@ -210,7 +211,7 @@
 <p>如你所见，它快了一些——考虑到NumPy版本的核心代码是用C语言写的，这还挺有趣。</p>
 </section>
 <section id="id3">
-<h2>讨论<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<h2>讨论<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
 <p>本节利用了Cython类型的内存视图，极大的简化了数组的操作。
 <code class="docutils literal notranslate"><span class="pre">cpdef</span> <span class="pre">clip()</span></code> 声明了 <code class="docutils literal notranslate"><span class="pre">clip()</span></code> 同时为C级别函数以及Python级别函数。
 在Cython中，这个是很重要的，因为它表示此函数调用要比其他Cython函数更加高效

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>15.8 C和Python中的线程混用 &mdash; Python  documentation</title>
@@ -11,10 +11,11 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -115,15 +116,15 @@
            <div itemprop="articleBody">
              
   <section id="cpython">
-<h1>15.8 C和Python中的线程混用<a class="headerlink" href="#cpython" title="Permalink to this headline"></a></h1>
+<h1>15.8 C和Python中的线程混用<a class="headerlink" href="#cpython" title="Permalink to this heading"></a></h1>
 <section id="id1">
-<h2>问题<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h2>
+<h2>问题<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
 <p>你有一个程序需要混合使用C、Python和线程，
 有些线程是在C中创建的，超出了Python解释器的控制范围。
 并且一些线程还使用了Python C API中的函数。</p>
 </section>
 <section id="id2">
-<h2>解决方案<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<h2>解决方案<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
 <p>如果你想将C、Python和线程混合在一起，你需要确保正确的初始化和管理Python的全局解释器锁（GIL）。
 要想这样做，可以将下列代码放到你的C代码中并确保它在任何线程被创建之前被调用。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#include &lt;Python.h&gt;
@@ -150,7 +151,7 @@
 <p>每次调用 <code class="docutils literal notranslate"><span class="pre">PyGILState_Ensure()</span></code> 都要相应的调用 <code class="docutils literal notranslate"><span class="pre">PyGILState_Release()</span></code> .</p>
 </section>
 <section id="id3">
-<h2>讨论<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<h2>讨论<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
 <p>在涉及到C和Python的高级程序中，很多事情一起做是很常见的——
 可能是对C、Python、C线程、Python线程的混合使用。
 只要你确保解释器被正确的初始化，并且涉及到解释器的C代码执行了正确的GIL管理，应该没什么问题。</p>

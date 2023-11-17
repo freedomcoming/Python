@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>15.19 从C语言中读取类文件对象 &mdash; Python  documentation</title>
@@ -11,10 +11,11 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -115,13 +116,13 @@
            <div itemprop="articleBody">
              
   <section id="c">
-<h1>15.19 从C语言中读取类文件对象<a class="headerlink" href="#c" title="Permalink to this headline"></a></h1>
+<h1>15.19 从C语言中读取类文件对象<a class="headerlink" href="#c" title="Permalink to this heading"></a></h1>
 <section id="id1">
-<h2>问题<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h2>
+<h2>问题<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
 <p>你要写C扩展来读取来自任何Python类文件对象中的数据（比如普通文件、StringIO对象等）。</p>
 </section>
 <section id="id2">
-<h2>解决方案<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<h2>解决方案<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
 <p>要读取一个类文件对象的数据，你需要重复调用 <code class="docutils literal notranslate"><span class="pre">read()</span></code> 方法，然后正确的解码获得的数据。</p>
 <p>下面是一个C扩展函数例子，仅仅只是读取一个类文件对象中的所有数据并将其输出到标准输出：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#define CHUNK_SIZE 8192
@@ -199,7 +200,7 @@ static PyObject *py_consume_file(PyObject *self, PyObject *args) {
 </div>
 </section>
 <section id="id3">
-<h2>讨论<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<h2>讨论<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
 <p>和普通系统文件不同的是，一个类文件对象并不需要使用低级文件描述符来构建。
 因此，你不能使用普通的C库函数来访问它。
 你需要使用Python的C API来像普通文件类似的那样操作类文件对象。</p>

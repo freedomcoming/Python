@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>2.3 用Shell通配符匹配字符串 &mdash; Python  documentation</title>
@@ -11,10 +11,11 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -114,13 +115,13 @@
            <div itemprop="articleBody">
              
   <section id="shell">
-<h1>2.3 用Shell通配符匹配字符串<a class="headerlink" href="#shell" title="Permalink to this headline"></a></h1>
+<h1>2.3 用Shell通配符匹配字符串<a class="headerlink" href="#shell" title="Permalink to this heading"></a></h1>
 <section id="id1">
-<h2>问题<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h2>
+<h2>问题<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
 <p>你想使用 <strong>Unix Shell</strong> 中常用的通配符(比如 <code class="docutils literal notranslate"><span class="pre">*.py</span></code> , <code class="docutils literal notranslate"><span class="pre">Dat[0-9]*.csv</span></code> 等)去匹配文本字符串</p>
 </section>
 <section id="id2">
-<h2>解决方案<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<h2>解决方案<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">fnmatch</span></code> 模块提供了两个函数—— <code class="docutils literal notranslate"><span class="pre">fnmatch()</span></code> 和 <code class="docutils literal notranslate"><span class="pre">fnmatchcase()</span></code> ，可以用来实现这样的匹配。用法如下：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">fnmatch</span> <span class="kn">import</span> <span class="n">fnmatch</span><span class="p">,</span> <span class="n">fnmatchcase</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fnmatch</span><span class="p">(</span><span class="s1">&#39;foo.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;*.txt&#39;</span><span class="p">)</span>
@@ -173,7 +174,7 @@
 </div>
 </section>
 <section id="id3">
-<h2>讨论<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<h2>讨论<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">fnmatch()</span></code> 函数匹配能力介于简单的字符串方法和强大的正则表达式之间。
 如果在数据处理操作中只需要简单的通配符就能完成的时候，这通常是一个比较合理的方案。</p>
 <p>如果你的代码需要做文件名的匹配，最好使用 <code class="docutils literal notranslate"><span class="pre">glob</span></code> 模块。参考5.13小节。</p>
